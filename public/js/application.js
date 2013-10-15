@@ -17,23 +17,23 @@ function Game(playa1, playa2){
 
 function Winner() {
   if (playa1.lane.children().last().hasClass('end active')) {
-     the_winner = playa1
-      alert("NOONE EXCEPT " + the_winner.name + " wins at DEAATHTEHT RACCCE")
-      $(document).unbind("keyup")
-        var data = {first: playa1.name, second: playa2.name, winner: the_winner.name }
-  $.post('/results', data, function(response){
-    ('.racer_table').after(response)
+   the_winner = playa1
+   alert("NOONE EXCEPT " + the_winner.name + " wins at DEAATHTEHT RACCCE")
+   $(document).unbind("keyup")
+   var data = {first: playa1.name, second: playa2.name, winner: the_winner.name }
+   $.post('/results', data, function(response){
+    $('.racer_table').after(response)
   })
-  }
-  if (playa2.lane.children().last().hasClass('end active')) {
-    the_winner = playa2  
-      alert("NOONE EXCEPT " + the_winner.name + " wins at DEAATHTEHT RACCCE")
-      $(document).unbind("keyup")
-        var data = {first: playa1.name, second: playa2.name, winner: the_winner.name }
+ }
+ if (playa2.lane.children().last().hasClass('end active')) {
+  the_winner = playa2  
+  alert("NOONE EXCEPT " + the_winner.name + " wins at DEAATHTEHT RACCCE")
+  $(document).unbind("keyup")
+  var data = {first: playa1.name, second: playa2.name, winner: the_winner.name }
   $.post('/results', data, function(response){
-    ('.racer_table').after(response)
+    $('.racer_table').after(response)
   })
-  }
+}
 
 }
 
@@ -41,10 +41,14 @@ function Winner() {
 var the_winner
 var playa1
 var playa2
+var first_track = $('#player1_strip')
+var second_track = $('#player2_strip')
 
 $(document).ready(function() {
-  playa1 = new Playa("J-Howden", 65, $('#player1_strip'))
-  playa2 = new Playa("Zach Diesel", 76, $('#player2_strip'))
+  var first_track = $('#player1_strip')
+  var second_track = $('#player2_strip')
+  playa1 = new Playa(first_track.data('playa-one'), 65, first_track)
+  playa2 = new Playa(second_track.data('playa-two'), 76, second_track)
 
   $(document).on("keyup", function(event){ 
     console.log(event.which)
