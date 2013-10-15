@@ -4,6 +4,14 @@
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
-th {
-  text-align: left;
+
+.racer_table td {
+  border: 1px solid white;
+  background-color: aqua;
+  height: 100px;
+  width: 100px;
+}
+
+.racer_table td.active {
+  background-color: black;
 }
