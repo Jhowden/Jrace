@@ -3,7 +3,6 @@ class CreatePlayerRaces < ActiveRecord::Migration
     create_table :player_races do |t|
       t.integer :player_id
       t.integer :race_id
-      t.integer :result
       t.string :duration
       t.timestamps
     end
