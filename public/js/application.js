@@ -18,7 +18,7 @@ function Game(playa1, playa2){
 function Winner() {
   if (playa1.lane.children().last().hasClass('end active')) {
    the_winner = playa1
-   alert("NOONE EXCEPT " + the_winner.name + " wins at DEAATHTEHT RACCCE")
+   // alert("NOONE EXCEPT " + the_winner.name + " wins at DEAATHTEHT RACCCE")
    $(document).unbind("keyup")
    var data = {first: playa1.name, second: playa2.name, winner: the_winner.name }
    $.post('/results', data, function(response){
@@ -27,7 +27,7 @@ function Winner() {
  }
  if (playa2.lane.children().last().hasClass('end active')) {
   the_winner = playa2  
-  alert("NOONE EXCEPT " + the_winner.name + " wins at DEAATHTEHT RACCCE")
+  // alert("NOONE EXCEPT " + the_winner.name + " wins at DEAATHTEHT RACCCE")
   $(document).unbind("keyup")
   var data = {first: playa1.name, second: playa2.name, winner: the_winner.name }
   $.post('/results', data, function(response){
